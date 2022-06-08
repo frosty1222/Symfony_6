@@ -1,0 +1,39 @@
+{# templates/dish/dish_view.html.twig #}
+{% extends 'layout/index.html.twig' %}
+{% block title %}Edit Dish{% endblock %}
+{% block content %}
+<div class="col-xs-1-12">
+      <div class="col-xs-1-10">
+         {# <form  action="{{path('post_dish',{'id':data.id })}}" method="post" entype="multipart/form-data">
+             <div class="form-group">
+               <label for="">Name</label>
+               <input type="text" name="name"  class="form-control" placeholder="{{data.name}}">
+             </div>
+             <div class="form-group">
+               <label for="">Description</label>
+               <input type="text" name="description"  class="form-control" placeholder="{{data.description}}">
+             </div>
+             <div class="form-group">
+               <label for="">Image</label>
+               <input type="file" name="image"  class="form-control" value="{{data.image}}">
+             </div>
+             <div class="form-group">
+               <label for="">Price</label>
+               <input type="text" name="price"  class="form-control" placeholder="{{data.price}}">
+             </div>
+             <div class="form-group">
+               <label for="">Sale Price</label>
+               <input type="number" name="sale_price"  class="form-control" placeholder="{{data.saleprice}}">
+             </div>
+              <div class="form-group">
+                 <button type="submit" class="btn btn-primary">Submit</button>
+             </div>
+         </form> #}
+         {% form_theme form 'bootstrap_5_horizontal_layout.html.twig' %}
+
+            {{ form_start(form, {'action': path('post_edit',{'id':data.id }), 'method': 'POST'}) }}
+               {{ form(form) }}
+            {{ form_end(form) }}
+       </div>
+</div>
+{% endblock %}

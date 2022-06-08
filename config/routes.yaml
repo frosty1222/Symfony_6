@@ -5,3 +5,43 @@ controllers:
 kernel:
     resource: ../src/Kernel.php
     type: annotation
+
+# templates/dish/dish_view
+dish_view:
+    path: /dish/dish_view
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\DishController::dish_view
+
+create_dish:
+    path: /dish/create_dish
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\DishController::create_dish
+    methods: [GET]
+post_dish:
+    path: post_dish
+    # the controller value has the format 'controller_class::method_name'
+    controller: App\Controller\DishController::create_dish
+    methods:   [POST]
+tablelist:
+    path: /dish/tablelist
+    controller: App\Controller\DishController::tablelist
+    
+deletelist:
+    path: deletelist/{id}
+    controller: App\Controller\DishController::deletelist
+    methods: [GET]
+
+edit_dish:
+    path: /dish/edit_dish/{id}
+    controller: App\Controller\DishController::edit_dish
+    methods: [GET]
+
+post_edit:
+    path: post_edit/{id}
+    controller: App\Controller\DishController::post_edit
+    methods: [POST]
+
+userAuth:
+   path: userAuth/{id}
+   controller: App\Controller\UserController::userAuth
+   methods: [POST]

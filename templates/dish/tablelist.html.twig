@@ -1,0 +1,41 @@
+{# templates/dish/dish_view.html.twig #}
+{% extends 'layout/index.html.twig' %}
+{% block title %}Dish View{% endblock %}
+{% block content %}
+      <div class="col-md-1-12">
+            <table class="table table-striped table-inverse table-responsive">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                        <th>Sale Price</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                   
+                    {% for a in data %}
+                        <tr>
+                            <td scope="row">{{a.id}}</td>
+                            <td>{{a.name}}</td>
+                            <td>{{a.description}}</td>
+                            <td><img src="/uploads/{{a.image}}" width="50px"></td>
+                            <td>{{a.saleprice}}</td>
+                            <td>{{a.price}}</td>
+                            <td>
+                            <a class="btn btn-primary" href="{{path('edit_dish',{'id':a.id })}}">Edit</a>
+                            <a class="btn btn-danger" href="{{path('deletelist',{'id':a.id })}}">Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+            </table>
+             <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="{{path('tablelist')}}?page={{page - 1}}">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="{{path('tablelist')}}?page={{page + 1}}">Next</a></li>
+            </ul>
+      </div>
+{% endblock %}

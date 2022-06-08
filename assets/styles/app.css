@@ -1,3 +1,36 @@
 body {
     background-color: lightgray;
+    list-style: none;
+}
+.test-color{
+    color:red;
+  }
+.body-wrap-content{
+    width:100%;
+    overflow:hidden;
+    background: #fff;
+    margin: auto;
+}
+.dish_container{
+    background-color:transparent;
+}
+.dish-grid{
+    display:grid;
+    grid-template-columns:270px 270px 270px 270px;
+    grid-template-rows: 380px 380px 380px;
+    column-gap: 10px;
+    margin-left:auto;
+    /* margin-right:250px; */
+    row-gap: 30px;
+    width:auto;
+    /* overflow: hidden; */
+    margin-bottom:50px;
+    padding-bottom: 50px;
+}
+.margin-bottom{
+    margin-bottom:50px;
+}
+.main-content .col-sx-1-12.main-view{
+    margin-left: auto;
+    margin-right:100px;
 }

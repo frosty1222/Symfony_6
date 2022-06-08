@@ -4,8 +4,15 @@ framework:
 
         # Enables validator auto-mapping support.
         # For instance, basic validation constraints will be inferred from Doctrine's metadata.
-        #auto_mapping:
-        #    App\Entity\: []
+        auto_mapping:
+           App\Entity\: [
+               id:Blank,
+               name:NotBlank,
+               description:NotBlank,
+               image:NotBlank,
+               price:NotBlank,
+               sale_price:NotBlank,
+           ]
 
 when@test:
     framework:

@@ -1,0 +1,29 @@
+{# templates/dish/dish_view.html.twig #}
+{% extends 'layout/index.html.twig' %}
+{% block title %}Dish View{% endblock %}
+{% block content %}
+    <div class="col-md-12">
+        <div class="text-primary" ><a href="{{path('tablelist')}}" >Go to List View</a></div>
+        <div class="clearfix"></div>
+        <div class="col-md-12 dish-grid">
+        {% for a in data %}
+        <div class="card">
+        <img class="card-img-top" src="/uploads/{{a.image}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{a.name}}</h5>
+            <h5 class="card-title">{{a.price}}$ <del class="float-right">{{a.saleprice}}$</del></h5>
+            <p class="card-text">{{a.description}}</p>
+            <a href="#" class="btn btn-primary">Purchase</a>
+        </div>
+        </div>
+        {% endfor %}
+        <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="{{path('dish_view')}}?page={{page - 1}}">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="{{path('dish_view')}}?page={{page + 1}}">Next</a></li>
+        </ul>
+        </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% endblock %}
